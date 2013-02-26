@@ -7,27 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace monosnow.umbraco.uCssClassNameDropdown {
+namespace monosnow.umbraco.uCssClassNameDropdown.usercontrols {
     
     
-    public partial class test {
+    public partial class BootstrapIconPicker {
         
         /// <summary>
-        /// form1 control.
+        /// lvIcons control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.ListView lvIcons;
         
         /// <summary>
-        /// bip2 control.
+        /// ddlIcons control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::monosnow.umbraco.uCssClassNameDropdown.usercontrols.BootstrapIconPicker bip2;
+        protected global::System.Web.UI.WebControls.DropDownList ddlIcons;
     }
 }
