@@ -39,7 +39,7 @@ namespace monosnow.umbraco.uCssClassNameDropdown
         /// </summary>
          [DataEditorSetting("ExceptionList",
             description = "a pipe | delimited list of matched class names to ignore",
-            defaultValue = "large")]
+            defaultValue = "")]
         public string ExceptionList { get; set; }
 
 
