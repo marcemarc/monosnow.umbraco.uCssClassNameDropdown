@@ -13,7 +13,8 @@
     <div>
 
  <hr />
-    <monosnow:BootstrapIconPicker ID="bip2" runat="server" />
+  
+    <monosnow:FontAwesomeIconPicker ID="bip3" runat="server" />
     </div>
     </form>
    

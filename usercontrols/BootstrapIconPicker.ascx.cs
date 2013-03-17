@@ -6,10 +6,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 using monosnow.umbraco.uCssClassNameDropdown.Services;
+using umbraco.editorControls.userControlGrapper;
 
 namespace monosnow.umbraco.uCssClassNameDropdown.usercontrols
 {
-    public partial class BootstrapIconPicker : System.Web.UI.UserControl
+    public partial class BootstrapIconPicker : System.Web.UI.UserControl, IUsercontrolDataEditor 
     {
      protected override void OnPreRender(EventArgs e) 
    {
@@ -66,5 +67,6 @@ namespace monosnow.umbraco.uCssClassNameDropdown.usercontrols
         }
 
         #endregion
+
     }
     }

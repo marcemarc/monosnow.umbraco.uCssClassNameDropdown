@@ -23,11 +23,13 @@ namespace monosnow.umbraco.uCssClassNameDropdown
         /// Method to populate Dropdown list
         /// </summary>
         /// <param name="classNames">enumerable list of classnames</param>
-        private void populateDropdown(IEnumerable<string> classNames){             
+        private void populateDropdown(IEnumerable<string> classNames){
+            Context.Trace.Write("Populating Dropdown");
             CssClassNameList.DataSource = classNames;
             CssClassNameList.DataBind();
             if (CssClassNameList.Items.Count > 0)
             {
+                Context.Trace.Write("Add Choose...");
                 CssClassNameList.Items.Insert(0, new ListItem("Choose...", ""));
             }
              CssClassNameList.CssClass = "umbEditorDropDownList";
@@ -37,7 +39,6 @@ namespace monosnow.umbraco.uCssClassNameDropdown
         /// <summary>
         /// Init event of the control
         /// Get the Classnames using ClassNameRetrievalService and bind to dropdown
-        /// Set currently selected value
         /// </summary>
         /// <param name="e"></param>
         protected override void OnInit(EventArgs e)
@@ -48,16 +49,11 @@ namespace monosnow.umbraco.uCssClassNameDropdown
     
             _retrievalService = new ClassNameRetrievalService(this.PathToCssFile, this.Exceptions, this.CssClassRegEx);
             if (_retrievalService.CssFileExists){
-            populateDropdown(_retrievalService.GetClassNames());
-            _retrievalService = new ClassNameRetrievalService(this.PathToCssFile, this.Exceptions, this.CssClassRegEx);
-            if (CssClassNameList.Items.Count > 0)
-            {                
-                if (!String.IsNullOrEmpty(this.SelectedValue))
-                {
-                    CssClassNameList.SelectedValue = this.SelectedValue;
-                }
-            }
-            else {
+                var _cssClassNames = _retrievalService.GetClassNames();
+                populateDropdown(_cssClassNames);
+            
+            if (_cssClassNames.Count() == 0)
+           {                
                 isError = true;
                 statusMessage = "No Class names found matching the Regex: " + this.CssClassRegEx;
             }
@@ -139,13 +135,21 @@ namespace monosnow.umbraco.uCssClassNameDropdown
             {
                 if (CssClassNameList == null)
                 {
+                    Context.Trace.Write("Rebuilding Dropdown");
                     CssClassNameList = new DropDownList();
                     _retrievalService = new ClassNameRetrievalService(this.PathToCssFile, this.Exceptions, this.CssClassRegEx);
-                    populateDropdown(_retrievalService.GetClassNames());                   
+                    var _cssClassNames = _retrievalService.GetClassNames();
+                    populateDropdown(_cssClassNames);                   
                 }
-                if (!String.IsNullOrEmpty(value) && CssClassNameList.Items.Count > 0)
+                if (!String.IsNullOrEmpty(value))
                 {
+                    Context.Trace.Write("Setting Dropdown: " + value);
+                    _selectedValue = value;
                     CssClassNameList.SelectedValue = value;
+                }
+                else
+                {
+                    Context.Trace.Write("Dropdown Not Set");
                 }
                
              }

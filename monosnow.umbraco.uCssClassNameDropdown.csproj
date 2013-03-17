@@ -83,6 +83,13 @@
     </Compile>
     <Compile Include="uCssClassNameDropdown\DataType.cs" />
     <Compile Include="uCssClassNameDropdown\uCssClassNameDropdownControl.cs" />
+    <Compile Include="usercontrols\BootstrapIconPicker.ascx.cs">
+      <DependentUpon>BootstrapIconPicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\BootstrapIconPicker.ascx.designer.cs">
+      <DependentUpon>BootstrapIconPicker.ascx</DependentUpon>
+    </Compile>
     <Compile Include="usercontrols\FontAwesomeIconPicker.ascx.cs">
       <DependentUpon>FontAwesomeIconPicker.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -97,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="test.aspx" />
+    <Content Include="usercontrols\BootstrapIconPicker.ascx" />
     <Content Include="usercontrols\FontAwesomeIconPicker.ascx" />
   </ItemGroup>
   <ItemGroup>

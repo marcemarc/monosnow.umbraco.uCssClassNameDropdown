@@ -13,6 +13,15 @@ namespace monosnow.umbraco.uCssClassNameDropdown.usercontrols {
     public partial class FontAwesomeIconPicker {
         
         /// <summary>
+        /// fontAwesomeIconPickerHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fontAwesomeIconPickerHolder;
+        
+        /// <summary>
         /// lvIcons control.
         /// </summary>
         /// <remarks>
