@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -14,6 +15,15 @@
     <AssemblyName>monosnow.umbraco.uCssClassNameDropdown</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,15 +45,15 @@
   <ItemGroup>
     <Reference Include="businesslogic, Version=1.0.4779.24223, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\businesslogic.dll</HintPath>
+      <HintPath>CoreDlls\businesslogic.dll</HintPath>
     </Reference>
     <Reference Include="cms, Version=1.0.4779.24224, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\cms.dll</HintPath>
+      <HintPath>CoreDlls\cms.dll</HintPath>
     </Reference>
     <Reference Include="interfaces, Version=1.0.4779.24221, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\interfaces.dll</HintPath>
+      <HintPath>CoreDlls\interfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -64,11 +74,11 @@
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="umbraco.DataLayer, Version=1.0.4779.24223, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\umbraco.DataLayer.dll</HintPath>
+      <HintPath>CoreDlls\umbraco.DataLayer.dll</HintPath>
     </Reference>
     <Reference Include="umbraco.editorControls, Version=1.0.4779.24227, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\umbraco.editorControls.dll</HintPath>
+      <HintPath>CoreDlls\umbraco.editorControls.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +100,13 @@
     <Compile Include="usercontrols\BootstrapIconPicker.ascx.designer.cs">
       <DependentUpon>BootstrapIconPicker.ascx</DependentUpon>
     </Compile>
+    <Compile Include="usercontrols\FontAwesomeV4IconPicker.ascx.cs">
+      <DependentUpon>FontAwesomeV4IconPicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\FontAwesomeV4IconPicker.ascx.designer.cs">
+      <DependentUpon>FontAwesomeV4IconPicker.ascx</DependentUpon>
+    </Compile>
     <Compile Include="usercontrols\FontAwesomeIconPicker.ascx.cs">
       <DependentUpon>FontAwesomeIconPicker.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -105,10 +122,16 @@
   <ItemGroup>
     <Content Include="test.aspx" />
     <Content Include="usercontrols\BootstrapIconPicker.ascx" />
+    <Content Include="usercontrols\FontAwesomeV4IconPicker.ascx" />
     <Content Include="usercontrols\FontAwesomeIconPicker.ascx" />
   </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
