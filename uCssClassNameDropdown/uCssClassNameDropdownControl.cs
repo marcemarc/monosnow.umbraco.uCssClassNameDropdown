@@ -49,7 +49,7 @@ namespace monosnow.umbraco.uCssClassNameDropdown
             _retrievalService = new ClassNameRetrievalService(this.PathToCssFile, this.Exceptions, this.CssClassRegEx);
             if (_retrievalService.CssFileExists){
             populateDropdown(_retrievalService.GetClassNames());
-            _retrievalService = new ClassNameRetrievalService(this.PathToCssFile, this.Exceptions, this.CssClassRegEx);
+          //  _retrievalService = new ClassNameRetrievalService(this.PathToCssFile, this.Exceptions, this.CssClassRegEx);
             if (CssClassNameList.Items.Count > 0)
             {                
                 if (!String.IsNullOrEmpty(this.SelectedValue))
@@ -143,8 +143,9 @@ namespace monosnow.umbraco.uCssClassNameDropdown
                     _retrievalService = new ClassNameRetrievalService(this.PathToCssFile, this.Exceptions, this.CssClassRegEx);
                     populateDropdown(_retrievalService.GetClassNames());                   
                 }
-                if (!String.IsNullOrEmpty(value) && CssClassNameList.Items.Count > 0)
+                if (!String.IsNullOrEmpty(value))
                 {
+                    _selectedValue = value;
                     CssClassNameList.SelectedValue = value;
                 }
                

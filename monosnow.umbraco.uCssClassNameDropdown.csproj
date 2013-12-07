@@ -45,15 +45,15 @@
   <ItemGroup>
     <Reference Include="businesslogic, Version=1.0.4779.24223, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>CoreDlls\businesslogic.dll</HintPath>
+      <HintPath>..\..\BitBucket\marcemarc\uCssClassNameDropdownTestBed\Core Files\businesslogic.dll</HintPath>
     </Reference>
     <Reference Include="cms, Version=1.0.4779.24224, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>CoreDlls\cms.dll</HintPath>
+      <HintPath>..\..\BitBucket\marcemarc\uCssClassNameDropdownTestBed\Core Files\cms.dll</HintPath>
     </Reference>
     <Reference Include="interfaces, Version=1.0.4779.24221, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>CoreDlls\interfaces.dll</HintPath>
+      <HintPath>..\..\BitBucket\marcemarc\uCssClassNameDropdownTestBed\Core Files\interfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -74,11 +74,11 @@
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="umbraco.DataLayer, Version=1.0.4779.24223, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>CoreDlls\umbraco.DataLayer.dll</HintPath>
+      <HintPath>..\..\BitBucket\marcemarc\uCssClassNameDropdownTestBed\Core Files\umbraco.DataLayer.dll</HintPath>
     </Reference>
     <Reference Include="umbraco.editorControls, Version=1.0.4779.24227, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>CoreDlls\umbraco.editorControls.dll</HintPath>
+      <HintPath>..\..\BitBucket\marcemarc\uCssClassNameDropdownTestBed\Core Files\umbraco.editorControls.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
