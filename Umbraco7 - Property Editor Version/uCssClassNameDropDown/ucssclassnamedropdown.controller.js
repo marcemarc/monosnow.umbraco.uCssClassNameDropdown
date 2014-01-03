@@ -15,17 +15,18 @@ angular.module("umbraco")
 
             var cssPath = $scope.model.config.cssPath;
             var cssRegexPattern = $scope.model.config.cssRegex;
-            var excludeList = $scope.model.config.excludeList;
+            var excludeList = $scope.model.config.excludeList || '';
+
            
             //validate cssPath & cssRegex supplied
           
             //default values for testing
             if (cssPath == '') {
-                cssPath = '/css/font-awesome.css';
+                cssPath = 'css/font-awesome.css';
             }
             if (cssRegexPattern == ''){
                 
-                cssRegexPattern = '\.fa-(.*?):before';
+                cssRegexPattern = '\.icon-(.*?):before';
             }
             
             var cssRegex = new RegExp(cssRegexPattern, 'g');

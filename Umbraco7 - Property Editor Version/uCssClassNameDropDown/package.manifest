@@ -35,7 +35,7 @@
                     label: "Exclusion list",
                     description: "comma delimited list of styles to exclude",
                     key: "excludeList",
-                    view: "boolean"
+                    view: "textstring"
                 }
             ]
         }
@@ -46,5 +46,7 @@
    javascript: [
         '~/App_Plugins/uCssClassNameDropdown/ucssclassnamedropdown.controller.js'
     ],
-    css: []
+    css: [
+         '~/App_Plugins/uCssClassNameDropdown/css/font-awesome.css'
+    ]
 }
