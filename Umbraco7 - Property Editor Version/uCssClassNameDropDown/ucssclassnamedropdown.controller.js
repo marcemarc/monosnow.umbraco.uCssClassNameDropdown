@@ -15,7 +15,7 @@ angular.module("umbraco")
 
             var cssPath = $scope.model.config.cssPath;
             var cssRegexPattern = $scope.model.config.cssRegex;
-            var excludeList = $scope.model.config.excludeList;
+            var excludeList = $scope.model.config.excludeList || '';
            
             //validate cssPath & cssRegex supplied
           
