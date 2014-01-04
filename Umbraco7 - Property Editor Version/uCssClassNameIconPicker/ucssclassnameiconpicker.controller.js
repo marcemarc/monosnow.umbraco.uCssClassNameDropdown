@@ -47,8 +47,8 @@ angular.module("umbraco")
 
             var cssPath = $scope.model.config.cssPath;
             var cssRegexPattern = $scope.model.config.cssRegex;
-            var excludeList = $scope.model.config.excludeList;
-            var iconPattern = $scope.model.config.iconPattern;
+            var excludeList = $scope.model.config.excludeList || '';
+            var iconPattern = $scope.model.config.iconPattern || '';
 
             //validate cssPath & cssRegex supplied
             // load the supplied css stylesheet using the umbraco assetsService
