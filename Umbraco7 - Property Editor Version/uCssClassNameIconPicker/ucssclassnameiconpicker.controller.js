@@ -1,7 +1,11 @@
 angular.module("umbraco")
     .controller("tooorangey.uCssClassNameIconPickerController",
     function ($scope, $http, assetsService) {
-
+         
+        //watch the bound model value, when it chagnes scroll to the icon
+        $scope.$watch('model.value', function (newValue, oldValue) {
+            $scope.goToIcon(newValue);
+        });
         //a variable to store the matching class names
         $scope.classnames = [];
 
@@ -18,13 +22,15 @@ angular.module("umbraco")
             return $scope.iconpattern.replace("{0}", currentClassName);
         }
         $scope.goToIcon = function (selectedClassName) {
-            //add slocation, $anchorScroll to function
-            // set the location.hash to the id of
-            // the element you wish to scroll to.
-           // $location.hash('itemHolder-'+ 'beer');
-
-            // call $anchorScroll()
-           // $anchorScroll();
+            //if element is visible we can animate / scroll to it
+            var scrollPane = angular.element(".uCssClassNameIconPicker");
+            var scrollTo = angular.element("#iconHolder-" + selectedClassName);
+            var scrollToVisible = angular.element("#iconHolder-" + selectedClassName + ":visible");
+            if (scrollToVisible.length > 0) {
+                var scrollPos = scrollTo.offset().top + scrollPane.scrollTop() - 300;
+                scrollPane.animate({ scrollTop: scrollPos }, 150, 'swing', function () { });
+            }
+        
         }
         // function to determine whether the current item is selected
         $scope.getSelectedClass = function (currentClassName, selectedClassName) {
@@ -35,11 +41,14 @@ angular.module("umbraco")
                 return "";
             }
         }
+       
         // method to set the property values model value to be the new selected class name
         // see how the dropdown automatically changes because it is bound to model.value
         $scope.setSelectedClass = function (selectedClassName) {
             $scope.model.value = selectedClassName;
-            $scope.goToIcon(selectedClassName);
+            // $scope.selected = selectedClassName;
+
+
         }
 
         // method to get the matching classnames from the stylesheet
@@ -47,8 +56,8 @@ angular.module("umbraco")
 
             var cssPath = $scope.model.config.cssPath;
             var cssRegexPattern = $scope.model.config.cssRegex;
-            var excludeList = $scope.model.config.excludeList || '';
-            var iconPattern = $scope.model.config.iconPattern || '';
+            var excludeList = $scope.model.config.excludeList;
+            var iconPattern = $scope.model.config.iconPattern;
 
             //validate cssPath & cssRegex supplied
             // load the supplied css stylesheet using the umbraco assetsService
@@ -108,6 +117,7 @@ angular.module("umbraco")
         //call getclassnames to populate classnames scope
         $scope.getClassNames();
 
-    });
 
+
+    });
    

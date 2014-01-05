@@ -6,3 +6,4 @@ ul.uCssClassNameIconPicker li a i {font-size: 2em;text-align: center;display: bl
 ul.uCssClassNameIconPicker li a {text-align: center}
 ul.uCssClassNameIconPicker li.selected {border: 3px dashed orange}
 ul.uCssClassNameIconPicker li.selected a {color: red;}
+i.currentIcon {font-size: 2em;margin-right:0.1em; color: red}
