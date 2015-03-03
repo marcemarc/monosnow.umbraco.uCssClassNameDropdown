@@ -57,6 +57,9 @@ angular.module("umbraco")
             var cssPath = $scope.model.config.cssPath;
             var cssRegexPattern = $scope.model.config.cssRegex;
             var excludeList = $scope.model.config.excludeList;
+            if (excludeList == null) {
+                excludeList = "";
+            }
             var iconPattern = $scope.model.config.iconPattern;
 
             //validate cssPath & cssRegex supplied
@@ -82,8 +85,10 @@ angular.module("umbraco")
             $http({ method: 'GET', url: cssPath, cache: true }).
   success(function (data, status, headers, config) {
       cssText = data;
-      if (cssRegex.test(cssText)) {
-          hasMatches = true;
+      hasMatches = cssRegex.test(cssText);
+      //reset regex
+      cssRegex.compile(cssRegexPattern, "g");
+      if (hasMatches) {
           var match = cssRegex.exec(cssText);
           matches.push(match[1]);
           while (match != null) {
