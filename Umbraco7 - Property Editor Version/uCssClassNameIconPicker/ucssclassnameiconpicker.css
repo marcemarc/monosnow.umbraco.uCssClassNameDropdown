@@ -1,5 +1,5 @@
 
-ul.uCssClassNameIconPicker {height: 400px;overflow-x: scroll}
+ul.uCssClassNameIconPicker {max-height: 400px; overflow-y: auto;}
 ul.uCssClassNameIconPicker li {display: inline-block;margin: 0.4em;width: 6em;height: 4em;vertical-align: top;border: 3px solid #ffffff}
 ul.uCssClassNameIconPicker li span {display: block;text-align: center;font-size: 0.8em}
 ul.uCssClassNameIconPicker li a i {font-size: 2em;text-align: center;display: block}
