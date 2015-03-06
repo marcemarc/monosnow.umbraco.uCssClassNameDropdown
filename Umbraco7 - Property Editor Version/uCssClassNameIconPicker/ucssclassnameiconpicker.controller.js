@@ -1,6 +1,4 @@
-angular.module("umbraco")
-    .controller("tooorangey.uCssClassNameIconPickerController",
-    function ($scope, $http, assetsService) {
+angular.module("umbraco").controller("tooorangey.uCssClassNameIconPickerController", function ($scope, $http, assetsService) {
          
         //watch the bound model value, when it chagnes scroll to the icon
         $scope.$watch('model.value', function (newValue, oldValue) {
@@ -8,6 +6,12 @@ angular.module("umbraco")
         });
         //a variable to store the matching class names
         $scope.classnames = [];
+
+		// read prevalue of whether to show selected icon and dropdown
+		$scope.showDropdown = true;
+		if ($scope.model.config.showDropdown != null){
+			$scope.showDropdown = $scope.model.config.showDropdown;
+		}	
 
         //the html pattern for each matching item defaults for old font-awesome/bootstrap this is "icon icon-"
         // new font awesome has class="fa fa-{0} you can override this in the config for the datatype in umbraco

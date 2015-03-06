@@ -6,6 +6,9 @@
 </li>
 
 </ul>
-    
+  <p ng-show="showDropdown != 0"><i class="currentIcon fa fa-{{model.value}}"></i>
+       <select id="selectClassName" ng-model="model.value" ng-options="ccn for ccn in classnames">      
+       </select></p>  
+
 
     <span ng-bind="info"></span>

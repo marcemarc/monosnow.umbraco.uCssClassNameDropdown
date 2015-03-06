@@ -44,6 +44,12 @@
                     description: "Html pattern to display icon, eg <i class='icon icon-{0}'></i>",
                     key: "iconPattern",
                     view: "TextString"
+                },
+                  {
+                    label: "Show Additional Dropdown Selector",
+                    description: 'Whether to show the additional clunky dropdown selector of icons underneath the grid of icons',
+                    key: "showDropdown",
+                    view: "boolean"
                 }
             ]
         }
